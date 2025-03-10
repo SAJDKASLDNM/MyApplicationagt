@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="养号设置"
+        app:iconSpaceReserved="false">
+
+        <SeekBarPreference
+            android:key="min_watch_time"
+            android:title="最短观看时间"
+            android:summary="在视频上停留的最短时间（秒）"
+            android:defaultValue="5"
+            android:max="30"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="max_watch_time"
+            android:title="最长观看时间"
+            android:summary="在视频上停留的最长时间（秒）"
+            android:defaultValue="30"
+            android:max="120"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="like_probability"
+            android:title="点赞概率"
+            android:summary="自动点赞的概率（百分比）"
+            android:defaultValue="30"
+            android:max="100"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="comment_probability"
+            android:title="评论概率"
+            android:summary="自动评论的概率（百分比）"
+            android:defaultValue="10"
+            android:max="100"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="follow_probability"
+            android:title="关注概率"
+            android:summary="自动关注的概率（百分比）"
+            android:defaultValue="5"
+            android:max="100"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="collect_probability"
+            android:title="收藏概率"
+            android:summary="自动收藏的概率（百分比）"
+            android:defaultValue="5"
+            android:max="100"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="直播设置"
+        app:iconSpaceReserved="false">
+
+        <SeekBarPreference
+            android:key="live_like_probability"
+            android:title="直播点赞概率"
+            android:summary="直播中自动点赞的概率（百分比）"
+            android:defaultValue="50"
+            android:max="100"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="live_comment_probability"
+            android:title="直播评论概率"
+            android:summary="直播中自动评论的概率（百分比）"
+            android:defaultValue="10"
+            android:max="100"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="live_gift_probability"
+            android:title="直播礼物概率"
+            android:summary="直播中自动送礼物的概率（百分比）"
+            android:defaultValue="0"
+            android:max="100"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="live_auto_switch"
+            android:title="自动切换直播"
+            android:summary="是否自动切换到下一个直播"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="live_switch_interval"
+            android:title="直播切换间隔"
+            android:summary="自动切换到下一个直播的时间间隔（分钟）"
+            android:defaultValue="5"
+            android:max="30"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"
+            app:dependency="live_auto_switch" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="关键词设置"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="keywords_enabled"
+            android:title="启用关键词检测"
+            android:summary="检测视频中是否包含关键词"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="keywords_boost"
+            android:title="关键词增益"
+            android:summary="匹配关键词时增加交互概率（百分比）"
+            android:defaultValue="20"
+            android:max="100"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"
+            app:dependency="keywords_enabled" />
+
+        <Preference
+            android:key="manage_keywords"
+            android:title="管理关键词"
+            android:summary="添加、编辑或删除关键词"
+            app:iconSpaceReserved="false"
+            app:dependency="keywords_enabled" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="其他设置"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="reset_settings"
+            android:title="恢复默认设置"
+            android:summary="将所有设置恢复为默认值"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
